@@ -1,0 +1,66 @@
+using System;
+
+namespace quadrat
+{
+	class Program
+	{
+		public static void Main(string[] args)
+		{
+			Console.WriteLine("Програма для обчислення коренів квадратного рівняння");
+			Console.WriteLine("Виконав студент Могіль Владислав");
+			
+			Console.WriteLine("Input a");
+			string ss=Console.ReadLine();
+			double a=double.Parse(ss);
+			Console.WriteLine("Input b");
+			ss=Console.ReadLine();
+			double b=double.Parse(ss);
+			Console.WriteLine("Input c");
+			ss=Console.ReadLine();
+			double c=double.Parse(ss);
+			// TODO: Implement Functionality Here
+			double D,x;
+			if ((a!=0 && b!=0)&&c!=0) {
+				D=Math.Pow(b,2)-4*a*c;
+			if (D>0) {
+				double x1=(-b+Math.Sqrt(D))/(2*a);
+				double x2=(-b-Math.Sqrt(D))/(2*a);
+				Console.WriteLine("x1={0}    x2={1}",x1,x2);
+			}
+			else{
+				if(D==0) {
+					x=-b/(2*a);
+					Console.WriteLine("x={0}",x);
+				}
+				else{
+					Console.WriteLine("No solutions");
+				}
+			}
+			}
+			else{
+				if(a==0&&b==0){
+					Console.WriteLine("No solutions");
+				}
+				else{
+				
+				
+				if (a==0){
+					x=-c/b;
+					Console.WriteLine("x={0}",x);
+				}
+				else{
+					if(c==0){
+						double x1=0;
+						double x2=-b;
+						Console.WriteLine("x1={0}    x2={1}",x1,x2);
+					}
+						
+				}
+				}
+				
+			}
+			Console.Write("Press any key to continue . . . ");
+			Console.ReadKey(true);
+		}
+	}
+}
